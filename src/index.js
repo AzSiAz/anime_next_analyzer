@@ -83,7 +83,9 @@ const getAnimeData = (completedAnimeList) => new Promise(resolve => {
 const getTrainingData = async (animesList, genresMap) => {
     return animesList.map(anime => ({
         input: anime.genres.map(genre => genresMap.get(genre)),
-        output: [ parseInt(anime.note, 10) / 10 ]
+        output: { 
+            note: parseInt(anime.note, 10) / 10
+        }
     }))
 }
 
@@ -106,7 +108,7 @@ const main = async () => {
     console.log(`Converting raw data into training data`)
     const trainingData = await getTrainingData(animesList, genreMap)
     console.log(`Done converting raw data into training data`)
-
+    
     // @ts-ignore
     net.train(fixLengths(trainingData))
 
