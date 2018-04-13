@@ -1,0 +1,25 @@
+{
+	"name": "anime_next_analyzer",
+	"version": "0.1.0",
+	"private": true,
+	"main": "dist/index.js",
+	"scripts": {
+		"watch": "noderize-scripts watch",
+		"build": "noderize-scripts build",
+		"start": "noderize-scripts start",
+		"format": "noderize-scripts format",
+		"test": "noderize-scripts test",
+		"clean": "noderize-scripts clean"
+	},
+	"devDependencies": {
+		"@noderize/scripts": "^0.4.6"
+	},
+	"dependencies": {
+		"@noderize/runtime": "^0.4.6",
+		"brain.js": "^1.1.2",
+		"cheerio": "^1.0.0-rc.2",
+		"got": "^8.3.0",
+		"mal-scraper": "^2.4.2",
+		"p-queue": "^2.4.0"
+	}
+}
